@@ -28,8 +28,10 @@ export const useAuthStore = defineStore('auth-store', {
                 });
                 const users = await dataUser.json();
                 localStorage.setItem('user', JSON.stringify(users));
-                // set user to state from localstorage or cookie
+                // serilizer user from localstorage
                 this.user = JSON.parse(localStorage.getItem('user') || '{}');
+            } else {
+                this.user = [];
             }
         },
 
@@ -43,6 +45,8 @@ export const useAuthStore = defineStore('auth-store', {
 
     getters: {
         users: (state) => state.user,
-    }
+    },
+
+    persist: true,
 
 });
