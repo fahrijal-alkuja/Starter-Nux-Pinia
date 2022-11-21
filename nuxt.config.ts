@@ -15,6 +15,7 @@ export default defineNuxtConfig({
                 { name: 'Aplikasi Yudisium Unikarta', content: 'My amazing site.' }
             ],
         },
+        pageTransition: { name: 'page', mode: 'out-in' },
     },
 
     modules: ['@pinia/nuxt'],
